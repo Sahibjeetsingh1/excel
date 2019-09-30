@@ -1,0 +1,7 @@
+#to write values in column a1 to a10
+
+Worksheets(1).Range("A1:A10").Value = "Hello World!!"
+
+#to give background in excel column
+
+Worksheets(1).Range("A1:A10").Interior.Color = RGB(174, 175, 100)
