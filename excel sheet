@@ -5,3 +5,65 @@ Worksheets(1).Range("A1:A10").Value = "Hello World!!"
 #to give background in excel column
 
 Worksheets(1).Range("A1:A10").Interior.Color = RGB(174, 175, 100)
+
+#to adjust size of column
+
+Worksheets(1).Range("A1:A10").ShrinkToFit = True
+
+#for borders
+
+Worksheets(1).Range("A1:A10").borders.Color = RGB(255, 478, 45)
+
+#forloop
+
+
+For i = 1 To 10
+
+
+Worksheets(1).Range("A" & i).Value = i
+
+Next i
+
+'Exercise: Make c40 tobe the sum of cells A20 to b40
+x = WorksheetFunction.Sum(Worksheets(1).Range("A1:A10"))
+
+#to center align
+Worksheets(1).Range("A1:A10").HorizontalAlignment = -4108
+
+
+
+
+#######################################################class code#########################################################
+Private Sub CommandButton1_Click()
+Worksheets(1).Range("A1:A10").Value = "Hello World!!"
+
+'add color to the background of cells A1:A10'
+
+Worksheets(1).Range("A1:A10").Interior.Color = RGB(255, 478, 45)
+
+'to adjust size'
+Worksheets(1).Range("A1:A10").ShrinkToFit = True
+
+For i = 1 To 10
+
+
+Worksheets(1).Range("A" & i).Value = i
+
+Next i
+
+
+'Exercise: Make c40 tobe the sum of cells A20 to b40
+
+Worksheets(1).Range("A1:A10").HorizontalAlignment = -4108
+
+
+Worksheets(1).Range("c40").Value = x
+
+'Assign a formula to cell c40 to sum the cells A20 to b40
+
+Worksheets(1).Range("c41").Formula = "=sum(A1:A10)"
+
+
+'fill in cells A50:A60 and B50:B60 with random numbers
+Worksheets(1).Range("A50:A60,B50:B60").Formula = "=RandBetween(0,100)"
+End Sub
